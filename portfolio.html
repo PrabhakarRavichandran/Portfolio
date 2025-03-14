@@ -55,6 +55,50 @@
             margin-bottom: 1rem;
         }
 
+        /* Resume Web Button */
+        .resume-btn {
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
+            color: black;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(15, 255, 255, 0.4);
+        }
+
+        /* About Me Section */
+        .about-me {
+            padding: 5rem 10%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 2rem 10%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(15, 255, 255, 0.1);
+        }
+
+        .about-me h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-cyan);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about-me p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         /* Social Links */
         .socials {
             display: flex;
@@ -80,6 +124,29 @@
             background: rgba(15, 255, 255, 0.1);
             border-color: var(--neon-cyan);
             box-shadow: 0 0 15px rgba(15, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+
+        .whatsapp-btn:hover {
             transform: translateY(-3px);
         }
 
@@ -191,6 +258,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .section { padding: 3rem 5%; }
+            .about-me { margin: 2rem 5%; }
         }
     </style>
 </head>
@@ -216,7 +284,30 @@
                     GitHub
                 </a>
             </div>
+
+            <!-- Resume Web Button -->
+            <a href="https://prabhakarravichandran.github.io/Prabhakar_Resume/Resume.html" 
+               class="resume-btn"
+               target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Resume Web
+            </a>
+
+            <!-- WhatsApp Contact Button -->
+            <a href="https://wa.me/919042919792?text=Hello%20I%20am%20interested%20in%20your%20services" target="_blank">
+                <button class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+                </button>
+            </a>
         </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <h2>About Me</h2>
+        <p>
+            I am Prabhakar R, an Aspiring Full Stack Developer from Chennai, skilled in Python, Java, HTML, CSS, JavaScript, SQL, MongoDB, and AI. Passionate about technology, I love solving real-world social problems through innovative and impactful solutions.
+        </p>
     </section>
 
     <!-- Skills Section -->
@@ -279,6 +370,19 @@
                target="_blank">
                 <h3>CS50P</h3>
                 <p>Harvard Python</p>
+            </a>
+            <!-- New Certifications -->
+            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_mongodb-python-nosql-activity-7304172136363872258-9lTT" 
+               class="course-card" 
+               target="_blank">
+                <h3>Connecting to MongoDB in Python</h3>
+                <p>LinkedIn Learning</p>
+            </a>
+            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_artificialintelligence-ibm-ai-activity-7299759891081007104-38uv" 
+               class="course-card" 
+               target="_blank">
+                <h3>Artificial Intelligence Fundamentals</h3>
+                <p>IBM</p>
             </a>
         </div>
     </section>
@@ -358,4 +462,4 @@
         });
     </script>
 </body>
-              </html>
+</html>
