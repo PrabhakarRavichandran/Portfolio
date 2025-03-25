@@ -238,6 +238,61 @@
             line-height: 1.6;
         }
 
+        /* Add this to your existing CSS */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-card .project-image-container {
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.course-card .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.course-card h3 {
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+}
+
+.course-card p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0;
+}
+      /* Project Images */
+.project-image-container {
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -310,6 +365,180 @@
             .section { padding: 3rem 5%; }
             .about-me { margin: 2rem 5%; }
         }
+
+      /* Education Section */
+.education-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(15, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
+    z-index: -1;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.education-card:hover::before {
+    opacity: 0.3;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(15, 255, 255, 0.2);
+}
+
+.education-icon {
+    font-size: 2.5rem;
+    color: var(--neon-cyan);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.education-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education-card h4 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.education-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.education-details span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.education-tech {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.education-tech span {
+    background: rgba(15, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--neon-cyan);
+    border: 1px solid rgba(15, 255, 255, 0.3);
+}
+
+/* Footer Section */
+.footer {
+    background: rgba(0,0,0,0.5);
+    padding: 4rem 10% 2rem;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-neon-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    margin-bottom: 3rem;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.footer-bottom {
+    text-align: center;
+    position: relative;
+}
+
+.footer-bottom p {
+    color: white;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.neon-text {
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.footer-particles {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(15, 255, 255, 0.1);
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.footer-particles::before,
+.footer-particles::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+}
+
+.footer-particles::before {
+    left: 20%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.footer-particles::after {
+    right: 20%;
+    animation: float 3s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-60%) translateX(10px); }
+}
     </style>
 </head>
 <body>
@@ -400,96 +629,166 @@
     </section>
 
     <!-- Courses Section -->
-    <section class="section">
-        <h2>Certifications</h2>
-        <div class="courses-grid">
-            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_freecodecamp-webdesign-responsivedesign-activity-7249331542756319232-ZwkQ" 
-               class="course-card" 
-               target="_blank">
-                <h3>Responsible Web Design</h3>
-                <p>freeCodeCamp</p>
-            </a>
-            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_harvardcs50-computerscience-learning-activity-7299118778804539392-sAiw" 
-               class="course-card" 
-               target="_blank">
-                <h3>CS50x</h3>
-                <p>Harvard University</p>
-            </a>
-            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_python-cs50p-harvarduniversity-activity-7304846927857102848-UllB" 
-               class="course-card" 
-               target="_blank">
-                <h3>CS50P</h3>
-                <p>Harvard Python</p>
-            </a>
-            <!-- New Certifications -->
-            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_mongodb-python-nosql-activity-7304172136363872258-9lTT" 
-               class="course-card" 
-               target="_blank">
-                <h3>Connecting to MongoDB in Python</h3>
-                <p>LinkedIn Learning</p>
-            </a>
-            <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_artificialintelligence-ibm-ai-activity-7299759891081007104-38uv" 
-               class="course-card" 
-               target="_blank">
-                <h3>Artificial Intelligence Fundamentals</h3>
-                <p>IBM</p>
-            </a>
-        </div>
-    </section>
+   <!-- Courses Section -->
+<section class="section">
+    <h2>Certifications</h2>
+    <div class="courses-grid">
+        <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_freecodecamp-webdesign-responsivedesign-activity-7249331542756319232-ZwkQ" 
+           class="course-card" 
+           target="_blank">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/responsible_web_design.jpeg" 
+                     alt="Responsible Web Design Certificate" 
+                     class="project-image">
+            </div>
+            <h3>Responsible Web Design</h3>
+            <p>freeCodeCamp</p>
+        </a>
+        <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_harvardcs50-computerscience-learning-activity-7299118778804539392-sAiw" 
+           class="course-card" 
+           target="_blank">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/CS50X.jpeg" 
+                     alt="CS50x Certificate" 
+                     class="project-image">
+            </div>
+            <h3>CS50x</h3>
+            <p>Harvard University</p>
+        </a>
+        <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_python-cs50p-harvarduniversity-activity-7304846927857102848-UllB" 
+           class="course-card" 
+           target="_blank">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/CS50P.jpeg" 
+                     alt="CS50P Certificate" 
+                     class="project-image">
+            </div>
+            <h3>CS50P</h3>
+            <p>Harvard Python</p>
+        </a>
+        <!-- New Certifications -->
+        <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_mongodb-python-nosql-activity-7304172136363872258-9lTT" 
+           class="course-card" 
+           target="_blank">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/MongoDB_python.jpeg" 
+                     alt="MongoDB with Python Certificate" 
+                     class="project-image">
+            </div>
+            <h3>Connecting to MongoDB in Python</h3>
+            <p>LinkedIn Learning</p>
+        </a>
+        <a href="https://www.linkedin.com/posts/prabhakar-ravichandran-22716b285_artificialintelligence-ibm-ai-activity-7299759891081007104-38uv" 
+           class="course-card" 
+           target="_blank">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/IBM_AI.jpeg" 
+                     alt="IBM AI Fundamentals Certificate" 
+                     class="project-image">
+            </div>
+            <h3>Artificial Intelligence Fundamentals</h3>
+            <p>IBM</p>
+        </a>
+    </div>
+</section>
 
     <!-- Projects Section -->
-    <section class="section">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>AI-Powered Chatbot</h3>
-                <div class="project-content">
-                    <p class="project-description">Intelligent chatbot using NLP/ML for automated user assistance and query resolution.</p>
-                    <div class="tech-stack">
-                        <span><i class="fab fa-python"></i> Python</span>
-                        <span><i class="fas fa-brain"></i> NLP</span>
-                        <span><i class="fas fa-api"></i> OpenAI API</span>
-                    </div>
-                </div>
+    <!-- Projects Section -->
+<section class="section">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/chat-bot-concept-illustration_114360-5522.webp" 
+                     alt="AI Chatbot" 
+                     class="project-image">
             </div>
-
-            <div class="project-card">
-                <h3>Smart Attendance System</h3>
-                <div class="project-content">
-                    <p class="project-description">Facial recognition system for automated attendance tracking with 98% accuracy.</p>
-                    <div class="tech-stack">
-                        <span><i class="fab fa-python"></i> Python</span>
-                        <span><i class="fas fa-camera"></i> OpenCV</span>
-                        <span><i class="fas fa-database"></i> MySQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>E-Commerce Platform</h3>
-                <div class="project-content">
-                    <p class="project-description">Full-stack shopping platform with secure payment integration and user management.</p>
-                    <div class="tech-stack">
-                        <span><i class="fab fa-react"></i> React</span>
-                        <span><i class="fab fa-node"></i> Node.js</span>
-                        <span><i class="fas fa-shield-alt"></i> Stripe API</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Blockchain Voting System</h3>
-                <div class="project-content">
-                    <p class="project-description">Decentralized voting platform ensuring tamper-proof elections through blockchain.</p>
-                    <div class="tech-stack">
-                        <span><i class="fab fa-ethereum"></i> Ethereum</span>
-                        <span><i class="fas fa-cube"></i> Solidity</span>
-                          <span><i class="fas fa-link"></i> Smart Contracts</span>
-                    </div>
+            <h3>AI-Powered Chatbot</h3>
+            <div class="project-content">
+                <p class="project-description">Intelligent chatbot using NLP/ML for automated user assistance and query resolution.</p>
+                <div class="tech-stack">
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fas fa-brain"></i> NLP</span>
+                    <span><i class="fas fa-api"></i> OpenAI API</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/rendering-anime-doctors-work_23-2151151812.jpg" 
+                     alt="Attendance System" 
+                     class="project-image">
+            </div>
+            <h3>Smart Attendance System</h3>
+            <div class="project-content">
+                <p class="project-description">Facial recognition system for automated attendance tracking with 98% accuracy.</p>
+                <div class="tech-stack">
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fas fa-camera"></i> OpenCV</span>
+                    <span><i class="fas fa-database"></i> MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/online-shopping-landing-page_33099-1725.webp" 
+                     alt="E-Commerce Platform" 
+                     class="project-image">
+            </div>
+            <h3>E-Commerce Platform</h3>
+            <div class="project-content">
+                <p class="project-description">Full-stack shopping platform with secure payment integration and user management.</p>
+                <div class="tech-stack">
+                    <span><i class="fab fa-react"></i> React</span>
+                    <span><i class="fab fa-node"></i> Node.js</span>
+                    <span><i class="fas fa-shield-alt"></i> Stripe API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="https://raw.githubusercontent.com/PrabhakarRavichandran/Portfolio/main/online-electronic-voting_74855-4448.jpg" 
+                     alt="Blockchain Voting" 
+                     class="project-image">
+            </div>
+            <h3>Blockchain Voting System</h3>
+            <div class="project-content">
+                <p class="project-description">Decentralized voting platform ensuring tamper-proof elections through blockchain.</p>
+                <div class="tech-stack">
+                    <span><i class="fab fa-ethereum"></i> Ethereum</span>
+                    <span><i class="fas fa-cube"></i> Solidity</span>
+                    <span><i class="fas fa-link"></i> Smart Contracts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Education Section -->
+<section class="section">
+    <h2>Education</h2>
+    <div class="education-grid">
+        <div class="education-card">
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Bachelor of Computer Science and Engineering</h3>
+            <h4>J.N.N Institute of Engineering</h4>
+            <div class="education-details">
+                <span><i class="fas fa-calendar-alt"></i> 2023 - 2027</span>
+                <span><i class="fas fa-map-marker-alt"></i> Chennai, India</span>
+            </div>
+            <div class="education-tech">
+                <span>AI Specialization</span>
+                <span>Web Development</span>
+                <span>Cloud Computing</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section class="section">
@@ -512,6 +811,17 @@
             </form>
         </div>
     </section>
+
+  <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-neon-line"></div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="neon-text">Prabhakar R</span></p>
+            <div class="footer-particles"></div>
+        </div>
+    </div>
+</footer>
 
     <script>
         // Three.js Background
